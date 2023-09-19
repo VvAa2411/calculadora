@@ -78,6 +78,30 @@ def potenciacion(numero1=0,numero2=0):
     return jsonify(data)
 
 #SENO
+@app.route("/seno/<float:numero1>")
+@app.route("/seno/<int:numero1>")
+def seno(numero1=0):
+    resultado=mt.sin(numero1)
+    ##resturn f" <h1> El resultado es: {resultado}</h1> <hr>"
+    data={
+        "resultado":resultado,
+        "operacion":"seno",
+    }
+    return jsonify(data)
+
+#COSENO
+@app.route("/coseno/<float:numero1>")
+@app.route("/coseno/<int:numero1>")
+def seno(numero1=0):
+    resultado=mt.cos(numero1)
+    ##resturn f" <h1> El resultado es: {resultado}</h1> <hr>"
+    data={
+        "resultado":resultado,
+        "operacion":"coseno",
+    }
+    return jsonify(data)
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
     
